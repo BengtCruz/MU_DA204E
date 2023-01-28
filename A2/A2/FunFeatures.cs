@@ -40,7 +40,7 @@ namespace A2
                 CalculateStrengthLength();
 
                 repeat = RunAgain();
-            
+
             } while (repeat);
 
         }
@@ -55,12 +55,12 @@ namespace A2
             ReadEmail();
 
             Console.WriteLine("\nNice to meet you " + name);
-            Console.WriteLine("Your email is "+email);
+            Console.WriteLine("Your email is " + email);
         }
 
         private void ReadName()
         {
-            
+
 
             Console.Write("Your first name please: ");
             name = Console.ReadLine();
@@ -78,35 +78,34 @@ namespace A2
 
             Console.WriteLine("\n****** FORTUNE TELLER ******");
             Console.Write("Select a number between 1 and 7: ");
-            if(Enum.TryParse<weekDays>(Console.ReadLine(), ignoreCase: true, out var choice))
+            Enum.TryParse<weekDays>(Console.ReadLine(), ignoreCase: true, out var choice);
+
+            switch (choice)
             {
-                switch (choice)
-                {
-                    case weekDays.Monday:
-                        Console.WriteLine("\nKeep calm on Mondays! You can fall apart!");
-                        break;
-                    case weekDays.Tuesday:
-                        Console.WriteLine("\nTuesdays and Wednesdays break your heart");
-                        break;
-                    case weekDays.Wednesday:
-                        Console.WriteLine("\nWednesday hmmmm, I would stay home!");
-                        break;
-                    case weekDays.Thursday:
-                        Console.WriteLine("\nThursday is your lucky day, don't wait for Friday");
-                        break;
-                    case weekDays.Friday:
-                        Console.WriteLine("\nFriday, you are in love");
-                        break;
-                    case weekDays.Saturday:
-                        Console.WriteLine("\nSaturday, do nothing and do plenty of it!");
-                        break;
-                    case weekDays.Sunday:
-                        Console.WriteLine("\nAnd Sunday always comes too soon");
-                        break;
-                    default:
-                        Console.WriteLine("\nNo day? is a good day but it doesn't exist");
-                        break;
-                }
+                case weekDays.Monday:
+                    Console.WriteLine("\nKeep calm on Mondays! You can fall apart!");
+                    break;
+                case weekDays.Tuesday:
+                    Console.WriteLine("\nTuesdays break your heart");
+                    break;
+                case weekDays.Wednesday:
+                    Console.WriteLine("\nWednesday hmmmm, I would stay home!");
+                    break;
+                case weekDays.Thursday:
+                    Console.WriteLine("\nThursday is your lucky day, don't wait for Friday");
+                    break;
+                case weekDays.Friday:
+                    Console.WriteLine("\nFriday, you are in love");
+                    break;
+                case weekDays.Saturday:
+                    Console.WriteLine("\nSaturday, do nothing and do plenty of it!");
+                    break;
+                case weekDays.Sunday:
+                    Console.WriteLine("\nAnd Sunday always comes too soon");
+                    break;
+                default:
+                    Console.WriteLine("\nNo day? is a good day but it doesn't exist");
+                    break;
             }
         }
 
