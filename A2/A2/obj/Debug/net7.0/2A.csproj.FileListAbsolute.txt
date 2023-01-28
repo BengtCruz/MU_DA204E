@@ -1,0 +1,15 @@
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\bin\Debug\net7.0\2A.exe
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\bin\Debug\net7.0\2A.deps.json
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\bin\Debug\net7.0\2A.runtimeconfig.json
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\bin\Debug\net7.0\2A.dll
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\bin\Debug\net7.0\2A.pdb
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\obj\Debug\net7.0\2A.csproj.AssemblyReference.cache
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\obj\Debug\net7.0\2A.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\obj\Debug\net7.0\2A.AssemblyInfoInputs.cache
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\obj\Debug\net7.0\2A.AssemblyInfo.cs
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\obj\Debug\net7.0\2A.csproj.CoreCompileInputs.cache
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\obj\Debug\net7.0\2A.dll
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\obj\Debug\net7.0\refint\2A.dll
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\obj\Debug\net7.0\2A.pdb
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\obj\Debug\net7.0\2A.genruntimeconfig.cache
+C:\Users\bengt\Desktop\coding\C#\UNI\VS\A2\A2\obj\Debug\net7.0\ref\2A.dll

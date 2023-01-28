@@ -8,8 +8,8 @@ namespace A2
 {
     public class FunFeatures
     {
-        private string name = "";
-        private string email = "";
+        private string? name = null;
+        private string? email = null;
 
 
         public void Start()
@@ -34,9 +34,33 @@ namespace A2
         private void Introduce()
         {
 
+            Console.WriteLine("My name is Bengt and I am a Spring semester student!");
+            Console.WriteLine("\nLet me know bout yourself!");
+
+            /* Read User data */
+            ReadName();
+            ReadEmail();
+
+            Console.WriteLine("\nNice to meet you " + name);
+            Console.WriteLine("Your email is "+email);
         }
 
-        void PredictMyDay()
+        private void ReadName()
+        {
+            
+
+            Console.Write("Your first name please: ");
+            name = Console.ReadLine();
+            Console.Write("Your last name please: ");
+            name = name.Insert(0, Console.ReadLine().ToUpper() + ", ");
+        }
+
+        private void ReadEmail()
+        {
+            Console.Write("Your email please: ");
+            email = Console.ReadLine();
+        }
+        private void PredictMyDay()
         {
 
         }
@@ -46,7 +70,7 @@ namespace A2
             return true;
         }
 
-        void CalculateStrengthLength()
+        private void CalculateStrengthLength()
         {
 
         }
