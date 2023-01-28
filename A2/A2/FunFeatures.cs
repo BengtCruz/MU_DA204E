@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace A2
 {
@@ -10,6 +12,17 @@ namespace A2
     {
         private string? name = null;
         private string? email = null;
+
+        enum weekDays
+        {
+            Monday = 1,
+            Tuesday = 2,
+            Wednesday = 3,
+            Thursday = 4,
+            Friday = 5,
+            Saturday = 6,
+            Sunday = 7
+        }
 
 
         public void Start()
@@ -63,6 +76,38 @@ namespace A2
         private void PredictMyDay()
         {
 
+            Console.WriteLine("\n****** FORTUNE TELLER ******");
+            Console.Write("Select a number between 1 and 7: ");
+            if(Enum.TryParse<weekDays>(Console.ReadLine(), ignoreCase: true, out var choice))
+            {
+                switch (choice)
+                {
+                    case weekDays.Monday:
+                        Console.WriteLine("\nKeep calm on Mondays! You can fall apart!");
+                        break;
+                    case weekDays.Tuesday:
+                        Console.WriteLine("\nTuesdays and Wednesdays break your heart");
+                        break;
+                    case weekDays.Wednesday:
+                        Console.WriteLine("\nWednesday hmmmm, I would stay home!");
+                        break;
+                    case weekDays.Thursday:
+                        Console.WriteLine("\nThursday is your lucky day, don't wait for Friday");
+                        break;
+                    case weekDays.Friday:
+                        Console.WriteLine("\nFriday, you are in love");
+                        break;
+                    case weekDays.Saturday:
+                        Console.WriteLine("\nSaturday, do nothing and do plenty of it!");
+                        break;
+                    case weekDays.Sunday:
+                        Console.WriteLine("\nAnd Sunday always comes too soon");
+                        break;
+                    default:
+                        Console.WriteLine("\nNo day? is a good day but it doesn't exist");
+                        break;
+                }
+            }
         }
 
         private bool RunAgain()
