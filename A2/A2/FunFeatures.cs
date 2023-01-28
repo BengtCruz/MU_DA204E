@@ -8,10 +8,45 @@ namespace A2
 {
     public class FunFeatures
     {
-        private string name;
-        private string email;
+        private string name = "";
+        private string email = "";
 
-        private void introduce()
+
+        public void Start()
+        {
+
+            Introduce();
+
+            bool repeat = false;
+
+            do
+            {
+
+                PredictMyDay();
+
+                CalculateStrengthLength();
+
+                repeat = RunAgain();
+            
+            } while (repeat);
+
+        }
+        private void Introduce()
+        {
+
+        }
+
+        void PredictMyDay()
+        {
+
+        }
+
+        private bool RunAgain()
+        {
+            return true;
+        }
+
+        void CalculateStrengthLength()
         {
 
         }
