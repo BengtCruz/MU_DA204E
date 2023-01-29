@@ -37,7 +37,7 @@ namespace A2
 
                 PredictMyDay();
 
-                CalculateStrengthLength();
+                CalculateStringLength();
 
                 repeat = RunAgain();
 
@@ -117,10 +117,10 @@ namespace A2
             return (val == "y" || val == "y" || val == "yes" || val == "Yes");
         }
 
-        private void CalculateStrengthLength()
+        private void CalculateStringLength()
         {
 
-            Console.WriteLine("---- STRING LENGTH ----");
+            Console.WriteLine("\n---- STRING LENGTH ----");
             Console.WriteLine("Write a text with any number of characters and press Enter.\n" +
                 "You can even copy text from a file and paste it here!");
             string? text = Console.ReadLine();
