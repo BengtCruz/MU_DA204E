@@ -19,6 +19,7 @@
 
         private static void ContinueToNextPart()
         {
+            const int n = 10;
             Console.WriteLine("\nPRESS ENTER TO CONTINUE TO THE NEXT PART");
             Console.ReadLine();
             Console.Clear();

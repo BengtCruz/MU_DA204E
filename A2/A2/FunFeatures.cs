@@ -10,8 +10,8 @@ namespace A2
 {
     public class FunFeatures
     {
-        private string? name = null;
         private string? email = null;
+        private string? name = null;
 
         enum weekDays
         {
@@ -111,11 +111,20 @@ namespace A2
 
         private bool RunAgain()
         {
-            return true;
+            Console.Write("Continue with another round? (y/n): ");
+            string? val = Console.ReadLine();
+
+            return (val == "y" || val == "y" || val == "yes" || val == "Yes");
         }
 
         private void CalculateStrengthLength()
         {
+
+            Console.WriteLine("---- STRING LENGTH ----");
+            Console.WriteLine("Write a text with any number of characters and press Enter.\n" +
+                "You can even copy text from a file and paste it here!");
+            string? text = Console.ReadLine();
+            Console.WriteLine(text.ToUpper() + "\nNumber of chars = " + text.Length);
 
         }
 
