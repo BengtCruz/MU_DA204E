@@ -15,11 +15,25 @@
             ContinueToNextPart();
 
             /* Grade C: MathWork */
+
+            Console.Title = "Lets work with numbers!";
+            MathWork calc = new MathWork();
+            calc.Start();
+
+            ContinueToNextPart();
+
+            /* Grade B: TemperatureConverter */
+
+            Console.Title = "Temperature Converter";
+
+
+            ContinueToNextPart();
+
+            /* Grade A: */
         }
 
         private static void ContinueToNextPart()
         {
-            const int n = 10;
             Console.WriteLine("\nPRESS ENTER TO CONTINUE TO THE NEXT PART");
             Console.ReadLine();
             Console.Clear();
