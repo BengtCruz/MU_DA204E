@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assingment 1_Lower_Grade", "Assingment 1_Lower_Grade\Assingment 1_Lower_Grade.csproj", "{5CFA7C15-459D-414D-A350-C66811C1E3E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A1_Lower_Grade", "Assingment 1_Lower_Grade\A1_Lower_Grade.csproj", "{5CFA7C15-459D-414D-A350-C66811C1E3E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment 1_Higher_Grade", "Assignment 1_Higher_Grade\Assignment 1_Higher_Grade.csproj", "{8537E348-6BC8-4ED1-9C3C-56D145054EB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A1_Higher_Grade", "Assignment 1_Higher_Grade\A1_Higher_Grade.csproj", "{8537E348-6BC8-4ED1-9C3C-56D145054EB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

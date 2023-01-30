@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 /* GRADE B: TV Ad platform */
 
-namespace Assignment_1_Higher_Grade
+namespace A1_Higher_Grade
 {
     internal class Tv
     {

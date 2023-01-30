@@ -1,37 +1,41 @@
-using Assignment1;
+using A1_Lower_Grade;
 
-class Program
+
+namespace A1_Lower_Grade
 {
-    static void Main(string[]args)
+    class Program
     {
+        static void Main(string[] args)
+        {
 
-        PrepareConsolesLook();
-       
-        Pet pet = new Pet();
-        pet.Start();
+            PrepareConsolesLook();
 
-        Console.WriteLine("Press Enter to start next part!");
-        Console.ReadLine();
+            Pet pet = new Pet();
+            pet.Start();
 
-        TicketSeller ticket = new TicketSeller();
-        ticket.Start();
+            Console.WriteLine("Press Enter to start next part!");
+            Console.ReadLine();
 
-        Console.WriteLine("Press Enter to start next part!");
-        Console.ReadLine();
+            TicketSeller ticket = new TicketSeller();
+            ticket.Start();
 
-        Album album = new Album();
-        album.Start();
-        
+            Console.WriteLine("Press Enter to start next part!");
+            Console.ReadLine();
+
+            Album album = new Album();
+            album.Start();
+
+        }
+        static void PrepareConsolesLook()
+        {
+            //Arrange the Cosnole Window
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Title = "KIDS' FAIR";
+        }
+
     }
-    static void PrepareConsolesLook()
-    {
-        //Arrange the Cosnole Window
-        Console.BackgroundColor = ConsoleColor.White;
-        Console.Clear();
-        Console.ForegroundColor = ConsoleColor.Black;
-        Console.Title = "KIDS' FAIR";
-    }
-
 }
 
 

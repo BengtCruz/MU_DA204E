@@ -1,6 +1,6 @@
-﻿using Assignment_1_Higher_Grade;
+﻿using A1_Higher_Grade;
 
-namespace Assignment1_Higher_Grade
+namespace A1_Higher_Grade
 {
     internal class Program
     {

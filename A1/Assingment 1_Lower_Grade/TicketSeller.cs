@@ -2,7 +2,7 @@ using System;
 
 /* GRADE C: TicketSeller */
 
-namespace Assignment1
+namespace A1_Lower_Grade
 {
     public class TicketSeller
     {
