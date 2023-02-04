@@ -2,7 +2,7 @@ using System;
 
 /* GRADE D: Pet */
 
-namespace Assignment1{
+namespace A1_Lower_Grade{
 
 
     public class Pet

@@ -13,7 +13,7 @@ namespace A2
         private string? email = null;
         private string? name = null;
 
-        enum weekDays
+        private enum weekDays
         {
             Monday = 1,
             Tuesday = 2,

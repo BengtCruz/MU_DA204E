@@ -4,27 +4,29 @@
     {
         static void Main(string[] args)
         {
-            Console.Clear();
-            Console.Title = "Strings, selection and iteration in C#";
+            //Console.Clear();
+            //Console.Title = "Strings, selection and iteration in C#";
             
             /* Grade C: FunFeature */
 
-            FunFeatures funObj = new FunFeatures();
-            funObj.Start();
+            //FunFeatures funObj = new FunFeatures();
+            //funObj.Start();
 
-            ContinueToNextPart();
+            //ContinueToNextPart();
 
             /* Grade C: MathWork */
 
-            Console.Title = "Lets work with numbers!";
-            MathWork calc = new MathWork();
-            calc.Start();
+            //Console.Title = "Lets work with numbers!";
+            //MathWork calc = new MathWork();
+            //calc.Start();
 
-            ContinueToNextPart();
+            //ContinueToNextPart();
 
             /* Grade B: TemperatureConverter */
 
             Console.Title = "Temperature Converter";
+            TemperatureConverter tempConv = new TemperatureConverter();
+            tempConv.Start();
 
 
             ContinueToNextPart();
