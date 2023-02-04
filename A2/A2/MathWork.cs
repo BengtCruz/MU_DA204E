@@ -84,7 +84,7 @@ namespace A2
 
                 if (i % 2 == 0)
                 {
-                    Console.Write($"{i} \t");
+                    Console.Write($"{i} \t\t");
                     count++;
                 }
                 else

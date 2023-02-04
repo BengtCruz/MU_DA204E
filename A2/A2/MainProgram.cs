@@ -6,7 +6,7 @@
         {
             //Console.Clear();
             //Console.Title = "Strings, selection and iteration in C#";
-            
+
             /* Grade C: FunFeature */
 
             //FunFeatures funObj = new FunFeatures();
@@ -24,14 +24,18 @@
 
             /* Grade B: TemperatureConverter */
 
-            Console.Title = "Temperature Converter";
-            TemperatureConverter tempConv = new TemperatureConverter();
-            tempConv.Start();
+            //Console.Title = "Temperature Converter";
+            //TemperatureConverter tempConv = new TemperatureConverter();
+            //tempConv.Start();
 
 
-            ContinueToNextPart();
+            //ContinueToNextPart();
 
             /* Grade A: */
+
+            Console.Title = "Working Schedule";
+            WorkingSchedule wrkSch = new WorkingSchedule();
+            wrkSch.Start();
         }
 
         private static void ContinueToNextPart()
