@@ -41,6 +41,9 @@ namespace SuperCalculator
                 weightLabel.Text = "Weight (kg)";
 
                 bmiCalc.SetUnit(UnitTypes.Metric);
+
+                ftBox.Enabled = false;
+                ftBox.Text = string.Empty;
             }
         }
 
@@ -52,6 +55,8 @@ namespace SuperCalculator
                 weightLabel.Text = "Weight (lb)";
 
                 bmiCalc.SetUnit(UnitTypes.Imperial);
+
+                ftBox.Enabled = true;
             }
         }
         private void Calculate_Click(object sender, EventArgs e)
@@ -80,7 +85,9 @@ namespace SuperCalculator
         {
 
             resultBox.Text = $"Results for {bmiCalc.GetName()}";
-            bmiOut.Text = "";
+            bmiOut.Text = $"{bmiCalc.CalculateBMI():0.00}";
+            weightCatOut.Text = $"{bmiCalc.GetHeight():0.00}";
+
 
         }
 
@@ -112,21 +119,41 @@ namespace SuperCalculator
         /// <returns></returns>
         private bool ReadHeight()
         {
-            double height = 0.0;
-            
-            bool ok = double.TryParse(heightIn.Text.Trim(), out height);
+            double height;
+            double ft;
+            bool ok;
 
-            if (ok)
-                if (height > 0) // Guard for zero or negative
-                    if (bmiCalc.GetUnit() == UnitTypes.Imperial)
-                        bmiCalc.SetHeight(height * 12.00);
+            if(bmiCalc.GetUnit()==UnitTypes.Imperial) {
+
+                ok = double.TryParse(heightIn.Text.Trim(), out height);
+
+                if (double.TryParse(ftBox.Text.Trim(), out ft) && ok)
+                { 
+                    double totInch = (ft * 12.00) + height;
+                    
+                    if (totInch > 0)
+                        bmiCalc.SetHeight(totInch);
                     else
-                        bmiCalc.SetHeight(height / 100.0);
-                else
-                    ok = false;
+                        ok = false;
+                }
 
-            if(!ok)
-                errorLabel.Text = "*";
+            }else
+            {
+                ok = double.TryParse(heightIn.Text.Trim(), out height);
+
+                if(ok)
+                {
+                    if (height > 0)
+                        bmiCalc.SetHeight(height / 100.0);
+                    else
+                        ok = false;
+                }
+
+            }
+                
+
+            if (!ok)
+                _ = MessageBox.Show("Invalid height!", "Error");
                     
 
             return ok;
@@ -140,20 +167,22 @@ namespace SuperCalculator
         private bool ReadWeight()
         {
 
-            double weight = 0.0;
+            double weight;
             
             bool ok = double.TryParse(weightIn.Text.Trim(), out weight);
 
             if (ok)
-                bmiCalc.SetWeight(weight);
+                if (weight > 0) // Guard for zero or negative
+                    bmiCalc.SetWeight(weight);
+                else
+                    ok = false;
+
+            if (!ok)
+                _ = MessageBox.Show("Invalid weight!", "Error");
 
             return ok;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }

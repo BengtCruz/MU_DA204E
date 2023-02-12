@@ -31,13 +31,13 @@ namespace SuperCalculator
         /// 
         /// </summary>
         /// <returns></returns>
-        public double CalculateBMI()
-        {
-            double bmi = 0.0;
+        public double CalculateBMI() => (Unit == UnitTypes.Metric) ? Weight / Math.Pow(Height, 2) : 703.0 *(Weight/ Math.Pow(Height, 2));
+        
 
-            return bmi;
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public string NormalWeight()
         {
             string normalWght = "";
@@ -52,7 +52,7 @@ namespace SuperCalculator
         /// 
         /// </summary>
         /// <param name="name"></param>
-        public void SetName(string name) => Name = name;
+        public void SetName(string name) { if(!string.IsNullOrEmpty(name)) Name = name; }
 
         /// <summary>
         /// 
@@ -64,13 +64,14 @@ namespace SuperCalculator
         /// 
         /// </summary>
         /// <param name="height"></param>
-        public void SetHeight(double height) => Height = height;
+        public void SetHeight(double height) { if (height > 0) Height = height; }
+
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="weight"></param>
-        public void SetWeight(double weight) => Weight = weight;
+        public void SetWeight(double weight) { if (weight > 0) Weight = weight; }
 
         /* Getters */
 
