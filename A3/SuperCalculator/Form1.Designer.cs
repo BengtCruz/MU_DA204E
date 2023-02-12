@@ -32,16 +32,23 @@
             this.weightLabel = new System.Windows.Forms.Label();
             this.heightLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.weightBox = new System.Windows.Forms.TextBox();
-            this.heightBox = new System.Windows.Forms.TextBox();
-            this.nameBox = new System.Windows.Forms.TextBox();
+            this.weightIn = new System.Windows.Forms.TextBox();
+            this.heightIn = new System.Windows.Forms.TextBox();
+            this.nameIn = new System.Windows.Forms.TextBox();
             this.calcBtn = new System.Windows.Forms.Button();
             this.unitBox = new System.Windows.Forms.GroupBox();
             this.imperialBtn = new System.Windows.Forms.RadioButton();
             this.metricBtn = new System.Windows.Forms.RadioButton();
             this.resultBox = new System.Windows.Forms.GroupBox();
+            this.normalWeightOut = new System.Windows.Forms.Label();
+            this.normalBmiOut = new System.Windows.Forms.Label();
+            this.weightCatOut = new System.Windows.Forms.Label();
+            this.weightCatLabel = new System.Windows.Forms.Label();
+            this.bmiLabel = new System.Windows.Forms.Label();
+            this.bmiOut = new System.Windows.Forms.Label();
             this.bmiBox.SuspendLayout();
             this.unitBox.SuspendLayout();
+            this.resultBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // bmiBox
@@ -49,9 +56,9 @@
             this.bmiBox.Controls.Add(this.weightLabel);
             this.bmiBox.Controls.Add(this.heightLabel);
             this.bmiBox.Controls.Add(this.nameLabel);
-            this.bmiBox.Controls.Add(this.weightBox);
-            this.bmiBox.Controls.Add(this.heightBox);
-            this.bmiBox.Controls.Add(this.nameBox);
+            this.bmiBox.Controls.Add(this.weightIn);
+            this.bmiBox.Controls.Add(this.heightIn);
+            this.bmiBox.Controls.Add(this.nameIn);
             this.bmiBox.Controls.Add(this.calcBtn);
             this.bmiBox.Controls.Add(this.unitBox);
             this.bmiBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -89,38 +96,39 @@
             this.nameLabel.TabIndex = 5;
             this.nameLabel.Text = "Name";
             // 
-            // weightBox
+            // weightIn
             // 
-            this.weightBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.weightBox.Location = new System.Drawing.Point(177, 98);
-            this.weightBox.Name = "weightBox";
-            this.weightBox.Size = new System.Drawing.Size(100, 22);
-            this.weightBox.TabIndex = 4;
+            this.weightIn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.weightIn.Location = new System.Drawing.Point(177, 98);
+            this.weightIn.Name = "weightIn";
+            this.weightIn.Size = new System.Drawing.Size(100, 22);
+            this.weightIn.TabIndex = 4;
             // 
-            // heightBox
+            // heightIn
             // 
-            this.heightBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.heightBox.Location = new System.Drawing.Point(177, 69);
-            this.heightBox.Name = "heightBox";
-            this.heightBox.Size = new System.Drawing.Size(100, 22);
-            this.heightBox.TabIndex = 3;
+            this.heightIn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.heightIn.Location = new System.Drawing.Point(177, 69);
+            this.heightIn.Name = "heightIn";
+            this.heightIn.Size = new System.Drawing.Size(100, 22);
+            this.heightIn.TabIndex = 3;
             // 
-            // nameBox
+            // nameIn
             // 
-            this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nameBox.Location = new System.Drawing.Point(69, 40);
-            this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(208, 22);
-            this.nameBox.TabIndex = 2;
+            this.nameIn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nameIn.Location = new System.Drawing.Point(69, 40);
+            this.nameIn.Name = "nameIn";
+            this.nameIn.Size = new System.Drawing.Size(208, 22);
+            this.nameIn.TabIndex = 2;
             // 
             // calcBtn
             // 
-            this.calcBtn.Location = new System.Drawing.Point(131, 153);
+            this.calcBtn.Location = new System.Drawing.Point(122, 170);
             this.calcBtn.Name = "calcBtn";
             this.calcBtn.Size = new System.Drawing.Size(226, 23);
             this.calcBtn.TabIndex = 1;
             this.calcBtn.Text = "Calculate";
             this.calcBtn.UseVisualStyleBackColor = true;
+            this.calcBtn.Click += new System.EventHandler(this.Calculate_Click);
             // 
             // unitBox
             // 
@@ -159,12 +167,70 @@
             // 
             // resultBox
             // 
-            this.resultBox.Location = new System.Drawing.Point(106, 247);
+            this.resultBox.Controls.Add(this.normalWeightOut);
+            this.resultBox.Controls.Add(this.normalBmiOut);
+            this.resultBox.Controls.Add(this.weightCatOut);
+            this.resultBox.Controls.Add(this.weightCatLabel);
+            this.resultBox.Controls.Add(this.bmiLabel);
+            this.resultBox.Controls.Add(this.bmiOut);
+            this.resultBox.Location = new System.Drawing.Point(29, 247);
             this.resultBox.Name = "resultBox";
-            this.resultBox.Size = new System.Drawing.Size(353, 175);
+            this.resultBox.Size = new System.Drawing.Size(481, 191);
             this.resultBox.TabIndex = 1;
             this.resultBox.TabStop = false;
             this.resultBox.Text = "Results";
+            // 
+            // normalWeightOut
+            // 
+            this.normalWeightOut.AutoSize = true;
+            this.normalWeightOut.Location = new System.Drawing.Point(203, 157);
+            this.normalWeightOut.Name = "normalWeightOut";
+            this.normalWeightOut.Size = new System.Drawing.Size(38, 15);
+            this.normalWeightOut.TabIndex = 7;
+            this.normalWeightOut.Text = "label2";
+            // 
+            // normalBmiOut
+            // 
+            this.normalBmiOut.AutoSize = true;
+            this.normalBmiOut.Location = new System.Drawing.Point(203, 132);
+            this.normalBmiOut.Name = "normalBmiOut";
+            this.normalBmiOut.Size = new System.Drawing.Size(38, 15);
+            this.normalBmiOut.TabIndex = 6;
+            this.normalBmiOut.Text = "label1";
+            // 
+            // weightCatOut
+            // 
+            this.weightCatOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.weightCatOut.Location = new System.Drawing.Point(220, 91);
+            this.weightCatOut.Name = "weightCatOut";
+            this.weightCatOut.Size = new System.Drawing.Size(222, 23);
+            this.weightCatOut.TabIndex = 5;
+            // 
+            // weightCatLabel
+            // 
+            this.weightCatLabel.AutoSize = true;
+            this.weightCatLabel.Location = new System.Drawing.Point(17, 99);
+            this.weightCatLabel.Name = "weightCatLabel";
+            this.weightCatLabel.Size = new System.Drawing.Size(96, 15);
+            this.weightCatLabel.TabIndex = 2;
+            this.weightCatLabel.Text = "Weight Category";
+            // 
+            // bmiLabel
+            // 
+            this.bmiLabel.AutoSize = true;
+            this.bmiLabel.Location = new System.Drawing.Point(17, 52);
+            this.bmiLabel.Name = "bmiLabel";
+            this.bmiLabel.Size = new System.Drawing.Size(28, 15);
+            this.bmiLabel.TabIndex = 1;
+            this.bmiLabel.Text = "BMI";
+            // 
+            // bmiOut
+            // 
+            this.bmiOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.bmiOut.Location = new System.Drawing.Point(342, 44);
+            this.bmiOut.Name = "bmiOut";
+            this.bmiOut.Size = new System.Drawing.Size(100, 23);
+            this.bmiOut.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -182,6 +248,8 @@
             this.bmiBox.PerformLayout();
             this.unitBox.ResumeLayout(false);
             this.unitBox.PerformLayout();
+            this.resultBox.ResumeLayout(false);
+            this.resultBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -196,9 +264,15 @@
         private Label weightLabel;
         private Label heightLabel;
         private Label nameLabel;
-        private TextBox weightBox;
-        private TextBox heightBox;
-        private TextBox nameBox;
+        private TextBox weightIn;
+        private TextBox heightIn;
+        private TextBox nameIn;
         private GroupBox resultBox;
+        private Label bmiOut;
+        private Label weightCatOut;
+        private Label weightCatLabel;
+        private Label bmiLabel;
+        private Label normalWeightOut;
+        private Label normalBmiOut;
     }
 }
