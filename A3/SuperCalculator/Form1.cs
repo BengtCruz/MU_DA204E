@@ -61,33 +61,27 @@ namespace SuperCalculator
         }
         private void Calculate_Click(object sender, EventArgs e)
         {
+            ReadName();
+
             if (ReadInputBMI)
                 DisplayResults();
-            //else
-                //DisplayErrors();
+            
         }
 
 
         /// <summary>
         /// 
         /// </summary>
-        void DisplayError()
-        {
-
-
-
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        void DisplayResults()
+        void DisplayResults() 
         {
 
             resultBox.Text = $"Results for {bmiCalc.GetName()}";
             bmiOut.Text = $"{bmiCalc.CalculateBMI():0.00}";
-            weightCatOut.Text = $"{bmiCalc.GetHeight():0.00}";
+            weightCatOut.Text = bmiCalc.BmiWeightCat();
+            normalBmiOut.Text = "Normal BMI is between 18.5 and 24.9";
+            normalWeightOut.Text = "Normal weight should be between " + bmiCalc.NormalWeight();
 
+            
 
         }
 
@@ -95,7 +89,7 @@ namespace SuperCalculator
         /// 
         /// </summary>
         /// <returns></returns>
-        private bool ReadInputBMI => ReadName() && ReadHeight() && ReadWeight();
+        private bool ReadInputBMI => ReadHeight() & ReadWeight();
 
         /// <summary>
         /// 

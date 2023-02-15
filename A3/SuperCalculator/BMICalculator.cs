@@ -22,9 +22,25 @@ namespace SuperCalculator
         /// <returns></returns>
         public string BmiWeightCat()
         {
-            string cat = "";
 
-            return cat;
+            double twoDecimals = Math.Pow(10.0, 2);
+            double bmi = Math.Truncate(twoDecimals * CalculateBMI()) / twoDecimals;
+
+            if (bmi >= 18.5)
+            {
+                if (bmi >= 18.5 && bmi <= 24.99)
+                    return "Normal Weight";
+                else if (bmi >= 25.0 && bmi <= 29.99)
+                    return "Overweight (Pre-obesiy)";
+                else if (bmi >= 30.0 && bmi <= 34.99)
+                    return "Overweight (Obesity class I)";
+                else if (bmi >= 35.0 && bmi <= 39.99)
+                    return "Overweight (Obesity class II)";
+                else
+                    return "Overweight (Obesity class III)";
+            }
+            else return "Underweight";
+
         }
 
         /// <summary>
@@ -32,18 +48,13 @@ namespace SuperCalculator
         /// </summary>
         /// <returns></returns>
         public double CalculateBMI() => (Unit == UnitTypes.Metric) ? Weight / Math.Pow(Height, 2) : 703.0 *(Weight/ Math.Pow(Height, 2));
-        
+
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public string NormalWeight()
-        {
-            string normalWght = "";
-            
-            return normalWght;
-        }
+        public string NormalWeight() => (Unit == UnitTypes.Metric) ? $"{18.5 * Math.Pow(Height, 2):.00} and {24.9 * Math.Pow(Height, 2):.00} Kg" : $"{(18.5 / 703.0) * Math.Pow(Height, 2):.00} and {(24.9 / 703.0) * Math.Pow(Height, 2):.00} lbs";
 
 
         /* Setters */

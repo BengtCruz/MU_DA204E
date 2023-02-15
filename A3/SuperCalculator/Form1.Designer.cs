@@ -47,9 +47,21 @@
             this.weightCatLabel = new System.Windows.Forms.Label();
             this.bmiLabel = new System.Windows.Forms.Label();
             this.bmiOut = new System.Windows.Forms.Label();
+            this.savingPlanBox = new System.Windows.Forms.GroupBox();
+            this.monthlyLabel = new System.Windows.Forms.Label();
+            this.periodLabel = new System.Windows.Forms.Label();
+            this.depositIn = new System.Windows.Forms.TextBox();
+            this.periodIn = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.calculateSaving = new System.Windows.Forms.Button();
+            this.futureValueBox = new System.Windows.Forms.GroupBox();
+            this.amountPayedLabel = new System.Windows.Forms.Label();
+            this.finalBalanceLabel = new System.Windows.Forms.Label();
             this.bmiBox.SuspendLayout();
             this.unitBox.SuspendLayout();
             this.resultBox.SuspendLayout();
+            this.savingPlanBox.SuspendLayout();
+            this.futureValueBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // bmiBox
@@ -188,28 +200,28 @@
             this.resultBox.Controls.Add(this.bmiOut);
             this.resultBox.Location = new System.Drawing.Point(29, 247);
             this.resultBox.Name = "resultBox";
-            this.resultBox.Size = new System.Drawing.Size(481, 191);
+            this.resultBox.Size = new System.Drawing.Size(481, 215);
             this.resultBox.TabIndex = 1;
             this.resultBox.TabStop = false;
             this.resultBox.Text = "Results";
             // 
             // normalWeightOut
             // 
-            this.normalWeightOut.AutoSize = true;
-            this.normalWeightOut.Location = new System.Drawing.Point(203, 157);
+            this.normalWeightOut.Location = new System.Drawing.Point(69, 178);
             this.normalWeightOut.Name = "normalWeightOut";
-            this.normalWeightOut.Size = new System.Drawing.Size(38, 15);
+            this.normalWeightOut.Size = new System.Drawing.Size(352, 21);
             this.normalWeightOut.TabIndex = 7;
             this.normalWeightOut.Text = "label2";
+            this.normalWeightOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // normalBmiOut
             // 
-            this.normalBmiOut.AutoSize = true;
-            this.normalBmiOut.Location = new System.Drawing.Point(203, 132);
+            this.normalBmiOut.Location = new System.Drawing.Point(108, 143);
             this.normalBmiOut.Name = "normalBmiOut";
-            this.normalBmiOut.Size = new System.Drawing.Size(38, 15);
+            this.normalBmiOut.Size = new System.Drawing.Size(275, 21);
             this.normalBmiOut.TabIndex = 6;
             this.normalBmiOut.Text = "label1";
+            this.normalBmiOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // weightCatOut
             // 
@@ -247,11 +259,107 @@
             this.bmiOut.TabIndex = 0;
             this.bmiOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // savingPlanBox
+            // 
+            this.savingPlanBox.Controls.Add(this.futureValueBox);
+            this.savingPlanBox.Controls.Add(this.calculateSaving);
+            this.savingPlanBox.Controls.Add(this.button1);
+            this.savingPlanBox.Controls.Add(this.periodIn);
+            this.savingPlanBox.Controls.Add(this.depositIn);
+            this.savingPlanBox.Controls.Add(this.periodLabel);
+            this.savingPlanBox.Controls.Add(this.monthlyLabel);
+            this.savingPlanBox.Location = new System.Drawing.Point(588, 27);
+            this.savingPlanBox.Name = "savingPlanBox";
+            this.savingPlanBox.Size = new System.Drawing.Size(327, 429);
+            this.savingPlanBox.TabIndex = 2;
+            this.savingPlanBox.TabStop = false;
+            this.savingPlanBox.Text = "Saving Plan";
+            // 
+            // monthlyLabel
+            // 
+            this.monthlyLabel.AutoSize = true;
+            this.monthlyLabel.Location = new System.Drawing.Point(27, 45);
+            this.monthlyLabel.Name = "monthlyLabel";
+            this.monthlyLabel.Size = new System.Drawing.Size(95, 15);
+            this.monthlyLabel.TabIndex = 0;
+            this.monthlyLabel.Text = "Monthly Deposit";
+            // 
+            // periodLabel
+            // 
+            this.periodLabel.AutoSize = true;
+            this.periodLabel.Location = new System.Drawing.Point(27, 76);
+            this.periodLabel.Name = "periodLabel";
+            this.periodLabel.Size = new System.Drawing.Size(79, 15);
+            this.periodLabel.TabIndex = 1;
+            this.periodLabel.Text = "Period (years)";
+            // 
+            // depositIn
+            // 
+            this.depositIn.Location = new System.Drawing.Point(202, 39);
+            this.depositIn.Name = "depositIn";
+            this.depositIn.Size = new System.Drawing.Size(100, 23);
+            this.depositIn.TabIndex = 2;
+            // 
+            // periodIn
+            // 
+            this.periodIn.Location = new System.Drawing.Point(202, 68);
+            this.periodIn.Name = "periodIn";
+            this.periodIn.Size = new System.Drawing.Size(100, 23);
+            this.periodIn.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(325, 267);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // calculateSaving
+            // 
+            this.calculateSaving.Location = new System.Drawing.Point(84, 205);
+            this.calculateSaving.Name = "calculateSaving";
+            this.calculateSaving.Size = new System.Drawing.Size(168, 23);
+            this.calculateSaving.TabIndex = 5;
+            this.calculateSaving.Text = "Calculate Savings";
+            this.calculateSaving.UseVisualStyleBackColor = true;
+            // 
+            // futureValueBox
+            // 
+            this.futureValueBox.Controls.Add(this.finalBalanceLabel);
+            this.futureValueBox.Controls.Add(this.amountPayedLabel);
+            this.futureValueBox.Location = new System.Drawing.Point(27, 234);
+            this.futureValueBox.Name = "futureValueBox";
+            this.futureValueBox.Size = new System.Drawing.Size(275, 185);
+            this.futureValueBox.TabIndex = 6;
+            this.futureValueBox.TabStop = false;
+            this.futureValueBox.Text = "Future Value";
+            // 
+            // amountPayedLabel
+            // 
+            this.amountPayedLabel.AutoSize = true;
+            this.amountPayedLabel.Location = new System.Drawing.Point(9, 34);
+            this.amountPayedLabel.Name = "amountPayedLabel";
+            this.amountPayedLabel.Size = new System.Drawing.Size(86, 15);
+            this.amountPayedLabel.TabIndex = 0;
+            this.amountPayedLabel.Text = "Amount Payed";
+            // 
+            // finalBalanceLabel
+            // 
+            this.finalBalanceLabel.AutoSize = true;
+            this.finalBalanceLabel.Location = new System.Drawing.Point(9, 64);
+            this.finalBalanceLabel.Name = "finalBalanceLabel";
+            this.finalBalanceLabel.Size = new System.Drawing.Size(76, 15);
+            this.finalBalanceLabel.TabIndex = 1;
+            this.finalBalanceLabel.Text = "Final Balance";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 450);
+            this.ClientSize = new System.Drawing.Size(988, 468);
+            this.Controls.Add(this.savingPlanBox);
             this.Controls.Add(this.resultBox);
             this.Controls.Add(this.bmiBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -265,6 +373,10 @@
             this.unitBox.PerformLayout();
             this.resultBox.ResumeLayout(false);
             this.resultBox.PerformLayout();
+            this.savingPlanBox.ResumeLayout(false);
+            this.savingPlanBox.PerformLayout();
+            this.futureValueBox.ResumeLayout(false);
+            this.futureValueBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -290,5 +402,15 @@
         private Label normalWeightOut;
         private Label normalBmiOut;
         private TextBox ftBox;
+        private GroupBox savingPlanBox;
+        private Label periodLabel;
+        private Label monthlyLabel;
+        private Button calculateSaving;
+        private Button button1;
+        private TextBox periodIn;
+        private TextBox depositIn;
+        private GroupBox futureValueBox;
+        private Label amountPayedLabel;
+        private Label finalBalanceLabel;
     }
 }
