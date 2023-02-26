@@ -6,6 +6,8 @@ namespace SuperCalculator
     {
         private BMICalculator bmiCalc = new BMICalculator();
 
+        private SavingCalculator savingsCalc = new SavingCalculator();
+
         public MainForm()
         {
             InitializeComponent();
@@ -64,15 +66,36 @@ namespace SuperCalculator
             ReadName();
 
             if (ReadInputBMI)
-                DisplayResults();
+                DisplayBMIResults();
             
         }
+        private void calculateSavings_click(object sender, EventArgs e)
+        { 
+
+            if(ReadInputSavings)
+                DisplaySavingsResults();
+
+        }
+
+        void DisplaySavingsResults()
+        {
+            totalDepositOut.Text = $"{savingsCalc.CalculateTotalDeposit():0.00}";
+            finalBalanceOut.Text = $"{savingsCalc.CalculateFinalBalance() - savingsCalc.CalculateTotalFees():0.00}";
+            totalEarnedOut.Text  = $"{savingsCalc.CalculateTotalEarned():0.00}";
+            totalFeesOut.Text    = $"{savingsCalc.CalculateTotalFees():0.00}";
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool ReadInputSavings => ReadYears() && ReadMonthlyDeposit() && ReadFees() && ReadInterest() && ReadInitialDeposit();
 
 
         /// <summary>
         /// 
         /// </summary>
-        void DisplayResults() 
+        void DisplayBMIResults() 
         {
 
             resultBox.Text = $"Results for {bmiCalc.GetName()}";
@@ -80,8 +103,6 @@ namespace SuperCalculator
             weightCatOut.Text = bmiCalc.BmiWeightCat();
             normalBmiOut.Text = "Normal BMI is between 18.5 and 24.9";
             normalWeightOut.Text = "Normal weight should be between " + bmiCalc.NormalWeight();
-
-            
 
         }
 
@@ -160,10 +181,8 @@ namespace SuperCalculator
         /// <returns></returns>
         private bool ReadWeight()
         {
-
-            double weight;
             
-            bool ok = double.TryParse(weightIn.Text.Trim(), out weight);
+            bool ok = double.TryParse(weightIn.Text.Trim(), out double weight);
 
             if (ok)
                 if (weight > 0) // Guard for zero or negative
@@ -173,6 +192,98 @@ namespace SuperCalculator
 
             if (!ok)
                 _ = MessageBox.Show("Invalid weight!", "Error");
+
+            return ok;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool ReadMonthlyDeposit()
+        {
+
+            bool ok = double.TryParse(depositIn.Text.Trim(), out double monthlyDeposit);
+
+            if (ok)
+                savingsCalc.SetMonthlyDeposit(monthlyDeposit);
+            else
+                ok = false;
+
+            if (!ok)
+                _ = MessageBox.Show("Invalid deposit value!", "Error");
+
+            return ok;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool ReadYears()
+        {
+
+            bool ok = double.TryParse(periodIn.Text.Trim(), out double years);
+
+            if (ok)
+                savingsCalc.SetSavingPeriod(years);
+            else
+                ok = false;
+
+            if (!ok)
+                _ = MessageBox.Show("Invalid period value!", "Error");
+
+            return ok;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool ReadInterest()
+        {
+            bool ok = double.TryParse(interestIn.Text.Trim(), out double interest);
+
+            if (ok)
+                savingsCalc.SetInterestRate(interest);
+            else
+                ok = false;
+
+            if (!ok)
+                _ = MessageBox.Show("Invalid interest value!", "Error");
+
+            return ok;
+
+        }
+
+        private bool ReadInitialDeposit()
+        {
+
+            bool ok = double.TryParse(initialDepositIn.Text.Trim(), out double iniDeposit);
+
+            if (ok)
+                savingsCalc.SetInitialDepo(iniDeposit);
+            else
+                ok = false;
+
+            if (!ok)
+                _ = MessageBox.Show("Invalid initial deposit value!", "Error");
+
+            return ok;
+        }
+
+        private bool ReadFees()
+        {
+
+            bool ok = double.TryParse(feesIn.Text.Trim(), out double fees);
+
+            if (ok)
+                savingsCalc.SetFees(fees);
+            else
+                ok = false;
+
+            if (!ok)
+                _ = MessageBox.Show("Invalid fee value!", "Error");
 
             return ok;
         }
