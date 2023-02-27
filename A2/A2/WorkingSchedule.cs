@@ -127,23 +127,29 @@ namespace A2
             do
             {
                 ShowMenu();
-                Enum.TryParse<Choices>(Console.ReadLine(), ignoreCase: true, out var choice);
-                Console.WriteLine();
 
-                switch (choice)
+                if (Enum.TryParse<Choices>(Console.ReadLine(), ignoreCase: true, out var choice))
                 {
-                    case Choices.Weekends:
-                        RequestAndShowList(Choices.Weekends);
-                        Continue();
-                        break;
-                    case Choices.Nights:
-                        RequestAndShowList(Choices.Nights);
-                        Continue();
-                        break;
-                    case Choices.Exit:
-                        done = true;
-                        break;
+                    switch (choice)
+                    {
+                        case Choices.Weekends:
+                            RequestAndShowList(Choices.Weekends);
+                            Continue();
+                            break;
+                        case Choices.Nights:
+                            RequestAndShowList(Choices.Nights);
+                            Continue();
+                            break;
+                        case Choices.Exit:
+                            done = true;
+                            break;
+                        default:
+                            Console.WriteLine("\nWrong Input! Try again...\n");
+                            break;
+                    }
                 }
+                else
+                    Console.WriteLine("\nWrong Input! Try again...\n");
 
             } while (!done);
         }
