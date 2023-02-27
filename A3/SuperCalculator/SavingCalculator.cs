@@ -15,12 +15,15 @@ namespace SuperCalculator
         private double savingPeriod = 0.0;
         private double fees = 0.0;
         private double initialDepo = 0.0;
-
+        private const double percentageDenom = 0x64;
 
         /* Calculation Methods */
 
-
-        public double CalculateTotalFees() => fees > 0 ? CalculateFinalBalance() * fees : 0.0;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public double CalculateTotalFees() => fees > 0.0 ? CalculateFinalBalance() * fees : 0.0;
 
         /// <summary>
         /// 
@@ -32,7 +35,7 @@ namespace SuperCalculator
         /// 
         /// </summary>
         /// <returns></returns>
-        public double CalculateTotalDeposit() => monthlyDepo * (savingPeriod*12);
+        public double CalculateTotalDeposit() => monthlyDepo * (savingPeriod * 0b1100);
 
         /// <summary>
         /// 
@@ -40,7 +43,7 @@ namespace SuperCalculator
         /// <returns></returns>
         public double CalculateFinalBalance()
         {
-            double monthCount = savingPeriod * 12;
+            double monthCount = savingPeriod * 0b1100;
             double balance = initialDepo;
             double interest;
 
@@ -73,8 +76,8 @@ namespace SuperCalculator
         /// <param name="interest"></param>
         public void SetInterestRate(double Interest)
         {
-            if(Interest > 0.0)
-                rate = (Interest / 0x64) / 0b1100;
+            if (Interest > 0.0)
+                rate = (Interest / percentageDenom) / 0b1100;
         }
 
         /// <summary>
@@ -83,8 +86,8 @@ namespace SuperCalculator
         /// <param name="inFees"></param>
         public void SetFees(double inFees)
         {
-            if(inFees > 0.0)
-                fees = inFees / 0x64;
+            if (inFees > 0.0)
+                fees = inFees / percentageDenom;
         }
 
         /// <summary>
