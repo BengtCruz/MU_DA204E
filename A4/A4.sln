@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp", "PhoneBookApp\PhoneBookApp.csproj", "{0DF19749-76E7-4548-A4E1-83CB2B6C0023}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBookApp", "PhoneBookApp\PhoneBookApp.csproj", "{0DF19749-76E7-4548-A4E1-83CB2B6C0023}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartyOrganizerApp", "PartyOrganizerApp\PartyOrganizerApp.csproj", "{728F68C0-E8B7-49B6-848E-58B367121A2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRegister", "MovieRegister\MovieRegister.csproj", "{6133D142-5AD3-4B3A-BB38-13768DB11DD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0DF19749-76E7-4548-A4E1-83CB2B6C0023}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DF19749-76E7-4548-A4E1-83CB2B6C0023}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DF19749-76E7-4548-A4E1-83CB2B6C0023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{728F68C0-E8B7-49B6-848E-58B367121A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{728F68C0-E8B7-49B6-848E-58B367121A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{728F68C0-E8B7-49B6-848E-58B367121A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{728F68C0-E8B7-49B6-848E-58B367121A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6133D142-5AD3-4B3A-BB38-13768DB11DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6133D142-5AD3-4B3A-BB38-13768DB11DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6133D142-5AD3-4B3A-BB38-13768DB11DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6133D142-5AD3-4B3A-BB38-13768DB11DD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

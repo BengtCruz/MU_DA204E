@@ -95,7 +95,7 @@ namespace PhoneBookApp
         /// <summary>
         /// Swaps values in 1d arrays during SortByName function.
         /// </summary>
-        /// <param name="pos"></param>
+        /// <param name="pos">Current position</param>
         private void SwapValues(int pos)
         {
             string temp;
