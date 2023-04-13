@@ -6,5 +6,25 @@ namespace A5
         {
             InitializeComponent();
         }
+
+        private void clickCreateEvent(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clickAddGuest(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clickChange(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clickDelete(object sender, EventArgs e)
+        {
+
+        }
     }
 }
