@@ -425,6 +425,7 @@
             this.Controls.Add(this.newEventBox);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.ApplicationLoad);
             this.newEventBox.ResumeLayout(false);
             this.newEventBox.PerformLayout();
             this.addGuestBox.ResumeLayout(false);

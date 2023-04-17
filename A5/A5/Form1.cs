@@ -6,6 +6,11 @@ namespace A5
         {
             InitializeComponent();
         }
+        private void ApplicationLoad(object sender, EventArgs e)
+        {
+            foreach (var item in Enum.GetValues(typeof(Countries)))
+                countryDropDown.Items.Add(item);
+        }
 
         private void clickCreateEvent(object sender, EventArgs e)
         {
@@ -26,5 +31,6 @@ namespace A5
         {
 
         }
+
     }
 }
