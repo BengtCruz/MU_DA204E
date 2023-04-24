@@ -1,6 +1,6 @@
 ﻿namespace A5
 {
-    partial class Form1
+    partial class EventForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -51,12 +51,12 @@
             this.secondNameIn = new System.Windows.Forms.TextBox();
             this.firstNameIn = new System.Windows.Forms.TextBox();
             this.guestListBox = new System.Windows.Forms.ListBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.eventEconomyBox = new System.Windows.Forms.GroupBox();
             this.surplusDeficitLbl = new System.Windows.Forms.Label();
             this.totalFeesLbl = new System.Windows.Forms.Label();
             this.totalCostLbl = new System.Windows.Forms.Label();
             this.numberOfGuestLbl = new System.Windows.Forms.Label();
-            this.surplusDeficitOut = new System.Windows.Forms.Label();
+            this.incomeOut = new System.Windows.Forms.Label();
             this.totalFeesOut = new System.Windows.Forms.Label();
             this.totalCostOut = new System.Windows.Forms.Label();
             this.numbGuestOut = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.newEventBox.SuspendLayout();
             this.addGuestBox.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.eventEconomyBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // newEventBox
@@ -282,23 +282,24 @@
             this.guestListBox.Name = "guestListBox";
             this.guestListBox.Size = new System.Drawing.Size(817, 452);
             this.guestListBox.TabIndex = 2;
+            this.guestListBox.SelectedIndexChanged += new System.EventHandler(this.guestListBox_SelectedIndexChanged);
             // 
-            // groupBox1
+            // eventEconomyBox
             // 
-            this.groupBox1.Controls.Add(this.surplusDeficitLbl);
-            this.groupBox1.Controls.Add(this.totalFeesLbl);
-            this.groupBox1.Controls.Add(this.totalCostLbl);
-            this.groupBox1.Controls.Add(this.numberOfGuestLbl);
-            this.groupBox1.Controls.Add(this.surplusDeficitOut);
-            this.groupBox1.Controls.Add(this.totalFeesOut);
-            this.groupBox1.Controls.Add(this.totalCostOut);
-            this.groupBox1.Controls.Add(this.numbGuestOut);
-            this.groupBox1.Location = new System.Drawing.Point(880, 654);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(673, 325);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Event Economy";
+            this.eventEconomyBox.Controls.Add(this.surplusDeficitLbl);
+            this.eventEconomyBox.Controls.Add(this.totalFeesLbl);
+            this.eventEconomyBox.Controls.Add(this.totalCostLbl);
+            this.eventEconomyBox.Controls.Add(this.numberOfGuestLbl);
+            this.eventEconomyBox.Controls.Add(this.incomeOut);
+            this.eventEconomyBox.Controls.Add(this.totalFeesOut);
+            this.eventEconomyBox.Controls.Add(this.totalCostOut);
+            this.eventEconomyBox.Controls.Add(this.numbGuestOut);
+            this.eventEconomyBox.Location = new System.Drawing.Point(880, 654);
+            this.eventEconomyBox.Name = "eventEconomyBox";
+            this.eventEconomyBox.Size = new System.Drawing.Size(673, 325);
+            this.eventEconomyBox.TabIndex = 3;
+            this.eventEconomyBox.TabStop = false;
+            this.eventEconomyBox.Text = "Event Economy";
             // 
             // surplusDeficitLbl
             // 
@@ -336,13 +337,13 @@
             this.numberOfGuestLbl.TabIndex = 4;
             this.numberOfGuestLbl.Text = "Number of guests";
             // 
-            // surplusDeficitOut
+            // incomeOut
             // 
-            this.surplusDeficitOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.surplusDeficitOut.Location = new System.Drawing.Point(401, 256);
-            this.surplusDeficitOut.Name = "surplusDeficitOut";
-            this.surplusDeficitOut.Size = new System.Drawing.Size(251, 51);
-            this.surplusDeficitOut.TabIndex = 3;
+            this.incomeOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.incomeOut.Location = new System.Drawing.Point(401, 256);
+            this.incomeOut.Name = "incomeOut";
+            this.incomeOut.Size = new System.Drawing.Size(251, 51);
+            this.incomeOut.TabIndex = 3;
             // 
             // totalFeesOut
             // 
@@ -410,7 +411,7 @@
             this.deleteBtn.UseVisualStyleBackColor = true;
             this.deleteBtn.Click += new System.EventHandler(this.clickDelete);
             // 
-            // Form1
+            // EventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -419,19 +420,18 @@
             this.Controls.Add(this.changeBtn);
             this.Controls.Add(this.addressLbl);
             this.Controls.Add(this.guestLbl);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.eventEconomyBox);
             this.Controls.Add(this.guestListBox);
             this.Controls.Add(this.addGuestBox);
             this.Controls.Add(this.newEventBox);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.ApplicationLoad);
+            this.Name = "EventForm";
+            this.Text = "Event Manager";
             this.newEventBox.ResumeLayout(false);
             this.newEventBox.PerformLayout();
             this.addGuestBox.ResumeLayout(false);
             this.addGuestBox.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.eventEconomyBox.ResumeLayout(false);
+            this.eventEconomyBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,9 +462,8 @@
         private Label cityLbl;
         private Label zipCodeLbl;
         private Label countryLbl;
-        private GroupBox groupBox1;
         private Label numberOfGuestLbl;
-        private Label surplusDeficitOut;
+        private Label incomeOut;
         private Label totalFeesOut;
         private Label totalCostOut;
         private Label numbGuestOut;
@@ -475,5 +474,6 @@
         private Label addressLbl;
         private Button changeBtn;
         private Button deleteBtn;
+        private GroupBox eventEconomyBox;
     }
 }
