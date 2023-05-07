@@ -29,16 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.FileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.newSubFileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.openDataSubFileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveDataSubFileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitSubFileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutSubHelpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dateTimeLbl = new System.Windows.Forms.Label();
             this.priorityLbl = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.priorityBox = new System.Windows.Forms.ComboBox();
             this.toDoLbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.toDoIn = new System.Windows.Forms.TextBox();
             this.toDoBox = new System.Windows.Forms.GroupBox();
             this.descriptionLbl = new System.Windows.Forms.Label();
             this.priorityLblBox = new System.Windows.Forms.Label();
@@ -46,22 +52,14 @@
             this.dateLbl = new System.Windows.Forms.Label();
             this.toDoList = new System.Windows.Forms.ListBox();
             this.addBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.changeBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.clockLbl = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip2.SuspendLayout();
             this.toDoBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 40);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1580, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // menuStrip2
             // 
@@ -78,15 +76,69 @@
             // 
             // FileMenu
             // 
+            this.FileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newSubFileMenu,
+            this.toolStripSeparator1,
+            this.openDataSubFileMenu,
+            this.saveDataSubFileMenu,
+            this.toolStripSeparator2,
+            this.exitSubFileMenu});
             this.FileMenu.Name = "FileMenu";
             this.FileMenu.Size = new System.Drawing.Size(71, 36);
             this.FileMenu.Text = "File";
             // 
+            // newSubFileMenu
+            // 
+            this.newSubFileMenu.Name = "newSubFileMenu";
+            this.newSubFileMenu.Size = new System.Drawing.Size(352, 44);
+            this.newSubFileMenu.Text = "New            Ctrl+N";
+            this.newSubFileMenu.Click += new System.EventHandler(this.newSubFileMenu_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(349, 6);
+            // 
+            // openDataSubFileMenu
+            // 
+            this.openDataSubFileMenu.Name = "openDataSubFileMenu";
+            this.openDataSubFileMenu.Size = new System.Drawing.Size(352, 44);
+            this.openDataSubFileMenu.Text = "Open data file";
+            this.openDataSubFileMenu.Click += new System.EventHandler(this.openDataSubFileMenu_Click);
+            // 
+            // saveDataSubFileMenu
+            // 
+            this.saveDataSubFileMenu.Name = "saveDataSubFileMenu";
+            this.saveDataSubFileMenu.Size = new System.Drawing.Size(352, 44);
+            this.saveDataSubFileMenu.Text = "Save data file";
+            this.saveDataSubFileMenu.Click += new System.EventHandler(this.saveDataSubFileMenu_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(349, 6);
+            // 
+            // exitSubFileMenu
+            // 
+            this.exitSubFileMenu.Name = "exitSubFileMenu";
+            this.exitSubFileMenu.Size = new System.Drawing.Size(352, 44);
+            this.exitSubFileMenu.Text = "Exit              Alt+F4";
+            this.exitSubFileMenu.Click += new System.EventHandler(this.exitSubFileMenu_Click);
+            // 
             // HelpMenu
             // 
+            this.HelpMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutSubHelpMenu});
             this.HelpMenu.Name = "HelpMenu";
             this.HelpMenu.Size = new System.Drawing.Size(84, 36);
             this.HelpMenu.Text = "Help";
+            // 
+            // aboutSubHelpMenu
+            // 
+            this.aboutSubHelpMenu.Name = "aboutSubHelpMenu";
+            this.aboutSubHelpMenu.Size = new System.Drawing.Size(359, 44);
+            this.aboutSubHelpMenu.Text = "About...";
+            this.aboutSubHelpMenu.Click += new System.EventHandler(this.aboutSubHelpMenu_Click);
             // 
             // dateTimePicker
             // 
@@ -115,13 +167,13 @@
             this.priorityLbl.TabIndex = 4;
             this.priorityLbl.Text = "Priority";
             // 
-            // comboBox1
+            // priorityBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(880, 84);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(242, 40);
-            this.comboBox1.TabIndex = 5;
+            this.priorityBox.FormattingEnabled = true;
+            this.priorityBox.Location = new System.Drawing.Point(880, 84);
+            this.priorityBox.Name = "priorityBox";
+            this.priorityBox.Size = new System.Drawing.Size(242, 40);
+            this.priorityBox.TabIndex = 5;
             // 
             // toDoLbl
             // 
@@ -133,12 +185,12 @@
             this.toDoLbl.TabIndex = 6;
             this.toDoLbl.Text = "To Do";
             // 
-            // textBox1
+            // toDoIn
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 163);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(934, 39);
-            this.textBox1.TabIndex = 7;
+            this.toDoIn.Location = new System.Drawing.Point(188, 163);
+            this.toDoIn.Name = "toDoIn";
+            this.toDoIn.Size = new System.Drawing.Size(934, 39);
+            this.toDoIn.TabIndex = 7;
             // 
             // toDoBox
             // 
@@ -193,12 +245,14 @@
             // 
             // toDoList
             // 
+            this.toDoList.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.toDoList.FormattingEnabled = true;
-            this.toDoList.ItemHeight = 32;
+            this.toDoList.ItemHeight = 30;
             this.toDoList.Location = new System.Drawing.Point(19, 87);
             this.toDoList.Name = "toDoList";
-            this.toDoList.Size = new System.Drawing.Size(1531, 452);
+            this.toDoList.Size = new System.Drawing.Size(1531, 424);
             this.toDoList.TabIndex = 0;
+            this.toDoList.SelectedIndexChanged += new System.EventHandler(this.toDoList_SelectedIndexChanged);
             // 
             // addBtn
             // 
@@ -210,25 +264,25 @@
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // button1
+            // changeBtn
             // 
-            this.button1.Location = new System.Drawing.Point(69, 886);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(263, 46);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Change";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.changeBtn.Location = new System.Drawing.Point(69, 886);
+            this.changeBtn.Name = "changeBtn";
+            this.changeBtn.Size = new System.Drawing.Size(263, 46);
+            this.changeBtn.TabIndex = 10;
+            this.changeBtn.Text = "Change";
+            this.changeBtn.UseVisualStyleBackColor = true;
+            this.changeBtn.Click += new System.EventHandler(this.changeBtn_Click);
             // 
-            // button2
+            // deleteBtn
             // 
-            this.button2.Location = new System.Drawing.Point(368, 886);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(263, 46);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.deleteBtn.Location = new System.Drawing.Point(368, 886);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(263, 46);
+            this.deleteBtn.TabIndex = 11;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // timer
             // 
@@ -253,19 +307,17 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1580, 969);
             this.Controls.Add(this.clockLbl);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.changeBtn);
             this.Controls.Add(this.addBtn);
             this.Controls.Add(this.toDoBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.toDoIn);
             this.Controls.Add(this.toDoLbl);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.priorityBox);
             this.Controls.Add(this.priorityLbl);
             this.Controls.Add(this.dateTimeLbl);
             this.Controls.Add(this.dateTimePicker);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.menuStrip2.ResumeLayout(false);
@@ -278,27 +330,33 @@
         }
 
         #endregion
-
-        private MenuStrip menuStrip1;
         private MenuStrip menuStrip2;
         private ToolStripMenuItem FileMenu;
         private ToolStripMenuItem HelpMenu;
         private DateTimePicker dateTimePicker;
         private Label dateTimeLbl;
         private Label priorityLbl;
-        private ComboBox comboBox1;
+        private ComboBox priorityBox;
         private Label toDoLbl;
-        private TextBox textBox1;
+        private TextBox toDoIn;
         private GroupBox toDoBox;
         private Button addBtn;
         private ListBox toDoList;
         private Label dateLbl;
-        private Button button1;
-        private Button button2;
+        private Button changeBtn;
+        private Button deleteBtn;
         private Label descriptionLbl;
         private Label priorityLblBox;
         private Label hourLbl;
         private System.Windows.Forms.Timer timer;
         private Label clockLbl;
+        private ToolStripMenuItem newSubFileMenu;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem openDataSubFileMenu;
+        private ToolStripMenuItem saveDataSubFileMenu;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripMenuItem exitSubFileMenu;
+        private ToolStripMenuItem aboutSubHelpMenu;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

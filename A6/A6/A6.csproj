@@ -6,6 +6,15 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <NeutralLanguage>en</NeutralLanguage>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <Product>TaskManager</Product>
+    <Authors>Bengt Svedling Cruz</Authors>
+    <FileVersion>1.00</FileVersion>
+    <RepositoryUrl>https://github.com/BengtCruz/MU_DA204E</RepositoryUrl>
+    <Title>TaskManagerMalmöU</Title>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Description>Task manager assignment for Malmö University.</Description>
   </PropertyGroup>
 
 </Project>
